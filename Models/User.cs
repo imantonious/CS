@@ -21,11 +21,6 @@ namespace CSMVC.Models
         [Range(1, int.MaxValue, ErrorMessage = "Only positive numbers are allowed.")]
         public int age { get; set; }
 
-        // [Required]
-        // [MinLength(2)]
-        // [Display(Name = "Your Username: ")]
-        // public string UserName  { get; set; }
-
         [Display(Name = "Email: ")]
         [Required(ErrorMessage = "Enter your email.")]
         [EmailAddress]

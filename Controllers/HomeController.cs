@@ -76,7 +76,14 @@ namespace CSMVC.Controllers
         [Route("result")]
         public IActionResult Result(Survey yourSurvey)
         {
-            return View(yourSurvey);
+            if (ModelState.IsValid)
+            {
+                return View("Result", yourSurvey);
+            }
+            else
+            {
+                return View("Survey");
+            }
         }
 
         [HttpGet]
