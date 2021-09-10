@@ -1,25 +1,20 @@
 @model User
 
 <form asp-action="Create" asp-controller="Home" method="post">
-    <small><span style="color: red;" asp-validation-for="FirstName"></span></small>
-    <br>
-    <label asp-for="FirstName"></label>
+    <small> <span style="color: red;" asp-validation-for="FirstName"> </span> </small> <br>
+    <label asp-for="FirstName"> </label>
     <input asp-for="FirstName"> <br>
-    <small><span style="color: red;" asp-validation-for="LastName"></span></small>
-    <br>
-    <label asp-for="LastName"></label>
+    <small> <span style="color: red;" asp-validation-for="LastName"> </span> </small> <br>
+    <label asp-for="LastName"> </label>
     <input asp-for="LastName"> <br>
-    <small><span style="color: red;" asp-validation-for="age"></span></small>
-    <br>
-    <label asp-for="age"></label>
+    <small> <span style="color: red;" asp-validation-for="age"> </span> </small> <br>
+    <label asp-for="age"> </label>
     <input asp-for="age"> <br>
-    <small><span style="color: red;" asp-validation-for="Email"></span></small>
-    <br>
-    <label asp-for="Email"></label>
+    <small> <span style="color: red;" asp-validation-for="Email"> </span> </small> <br>
+    <label asp-for="Email"> </label>
     <input asp-for="Email"> <br>
-    <small><span style="color: red;" asp-validation-for="Password"></span></small>
-    <br>
-    <label asp-for="Password"></label>
+    <small> <span style="color: red;" asp-validation-for="Password"> </span> </small> <br>
+    <label asp-for="Password"> </label>
     <input asp-for="Password" placeholder="Password"> <br>
     <input value="Add User" type="submit">
 </form>
