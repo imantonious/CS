@@ -1,0 +1,27 @@
+<form action="/result" method="post">
+    <label>Your Name:</label>
+    <input type="text" name="Name">
+    <label>Location:</label>
+    <select name="Location">
+        <option selected disabled>-- Please Select One --</option>
+        <option value="Orange County">Orange County</option>
+        <option value="Loa Angeles">Los Angeles</option>
+        <option value="Riverside">Riverside</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label>Favorite Language:</label>
+    <select name="Language">
+        <option selected disabled>-- Please Select One --</option>
+        <option value="Golang">Golang</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="C#">C#</option>
+        <option value="Swift">Swift</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label>Comments:</label>
+    <textarea type="text" name="Comment" cols="30" rows="10" placeholder="Enter your comments here..."></textarea>
+
+    <button>Submit</button>
+</form>

@@ -65,5 +65,19 @@ namespace CSMVC.Controllers
             return View(numbers);
         }
 
+        [HttpGet]
+        [Route("survey")]
+        public IActionResult Survey()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("result")]
+        public IActionResult Result(Survey yourSurvey)
+        {
+            return View(yourSurvey);
+        }
+
     }
 }
