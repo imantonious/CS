@@ -79,5 +79,34 @@ namespace CSMVC.Controllers
             return View(yourSurvey);
         }
 
+        [HttpGet]
+        [Route("user/create")]
+        public IActionResult NewUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("user/create")]
+        public IActionResult Create(User newUser)
+        {
+            if (ModelState.IsValid)
+            {
+                // do something like add to db //! to come
+                return RedirectToAction("Welcome");
+            }
+            else
+            {
+                return View("NewUser");
+            }
+        }
+
+        [HttpGet]
+        [Route("welcome")]
+        public IActionResult Welcome()
+        {
+            return View();
+        }
+
     }
 }
