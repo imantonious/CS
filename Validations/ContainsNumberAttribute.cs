@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CSMVC.Validations
 {
-    public class ContainsSpecialCharacter : ValidationAttribute
+    public class ContainsNumberAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
@@ -11,18 +11,20 @@ namespace CSMVC.Validations
                 return new ValidationResult("Password required.");
             }
 
-            string specialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
-            foreach (char spch in specialChar)
+            System.Console.WriteLine(value);
+
+            string numbers = @"0123456789";
+            foreach (char num in numbers)
             {
                 foreach(char ch in (string)value)
                 {
-                    if (ch == spch)
+                    if (ch == num)
                     {
                         return ValidationResult.Success;
                     }
                 }
             }
-            return new ValidationResult("Password must contain at least one special character.");
+            return new ValidationResult("Password must contain at least one number");
         }
     }
 }

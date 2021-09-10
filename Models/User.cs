@@ -1,4 +1,6 @@
+using System;
 using System.ComponentModel.DataAnnotations;
+using CSMVC.Validations;
 
 namespace CSMVC.Models
 {

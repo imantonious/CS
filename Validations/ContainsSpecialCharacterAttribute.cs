@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CSMVC.Validations
 {
-    public class ContainsLetter : ValidationAttribute
+    public class ContainsSpecialCharacterAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
@@ -10,19 +10,22 @@ namespace CSMVC.Validations
             {
                 return new ValidationResult("Password required.");
             }
+            System.Console.WriteLine("value");
+            System.Console.WriteLine(value);
+            System.Console.WriteLine("value");
 
-            string letter = @"abcdefghijklmnopqrstuvwxyz";
-            foreach (char item in letter)
+            string specialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
+            foreach (char spch in specialChar)
             {
                 foreach(char ch in (string)value)
                 {
-                    if (ch==item)
+                    if (ch == spch)
                     {
                         return ValidationResult.Success;
                     }
                 }
             }
-            return new ValidationResult("Password must contain at least one letter.");
+            return new ValidationResult("Password must contain at least one special character.");
         }
     }
 }

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CSMVC.Validations
 {
-    public class ContainsNumber : ValidationAttribute
+    public class ContainsLetterAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
@@ -11,18 +11,18 @@ namespace CSMVC.Validations
                 return new ValidationResult("Password required.");
             }
 
-            string numbers = @"0123456789";
-            foreach (char num in numbers)
+            string letter = @"abcdefghijklmnopqrstuvwxyz";
+            foreach (char item in letter)
             {
                 foreach(char ch in (string)value)
                 {
-                    if (ch == num)
+                    if (ch==item)
                     {
                         return ValidationResult.Success;
                     }
                 }
             }
-            return new ValidationResult("Password must contain at least one number");
+            return new ValidationResult("Password must contain at least one letter.");
         }
     }
 }
