@@ -1,27 +1,34 @@
+@model Survey
+
 <form action="/result" method="post">
-    <label>Your Name:</label>
-    <input type="text" name="Name">
-    <label>Location:</label>
-    <select name="Location">
+    <small> <span style="color: red;" asp-validation-for="Name"> </span> </small> <br>
+    <label asp-for="Name"> </label>
+    <input asp-for="Name"> <br>
+
+    <small> <span style="color: red;" asp-validation-for="Location"> </span> </small> <br>
+    <label asp-for="Location"> </label>
+    <select asp-for="Location">
         <option selected disabled>-- Please Select One --</option>
         <option value="Orange County">Orange County</option>
         <option value="Loa Angeles">Los Angeles</option>
         <option value="Riverside">Riverside</option>
         <option value="Other">Other</option>
-    </select>
+    </select> <br>
 
-    <label>Favorite Language:</label>
-    <select name="Language">
+    <small> <span style="color: red;" asp-validation-for="Language"> </span> </small> <br>
+    <label asp-for="Language">Favorite Language:</label>
+    <select asp-for="Language">
         <option selected disabled>-- Please Select One --</option>
         <option value="Golang">Golang</option>
         <option value="JavaScript">JavaScript</option>
         <option value="C#">C#</option>
         <option value="Swift">Swift</option>
         <option value="Other">Other</option>
-    </select>
+    </select> <br>
 
-    <label>Comments:</label>
-    <textarea type="text" name="Comment" cols="30" rows="10" placeholder="Enter your comments here..."></textarea>
+    <small> <span style="color: red;" asp-validation-for="Comment"> </span> </small> <br>
+    <label asp-for="Comment">Comments:</label>
+    <textarea type="text" asp-for="Comment" cols="30" rows="10" placeholder="Enter your comments here..."></textarea>
 
     <button>Submit</button>
 </form>
