@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -18,6 +19,8 @@ namespace CSMVC.Controllers
         public IActionResult Index()
         {
             string message = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad tempore incidunt similique, accusantium in nostrum obcaecati, itaque ea dolorum, ipsam est. Odio, ullam odit. Nam harum aliquid quia doloribus laborum?";
+            ViewBag.CurrentTime = DateTime.Now;
+            ViewBag.Message = "The time is: ";
             return View("Index", message);
         }
 
